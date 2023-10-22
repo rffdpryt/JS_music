@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gitar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        let C = new Audio();
+        C.src = "gitar/C.mp3"
+
+        let Dm = new Audio();
+        Dm.src = "gitar/Dm.mp3"
+
+        let F = new Audio();
+        F.src = "gitar/F.mp3"
+
+        let G = new Audio();
+        G.src = "gitar/G.mp3"
+
+        let Am = new Audio();
+        Am.src = "gitar/Am.mp3"
+    </script>
+
+</head>
+<body class="flex h-screen justify-center items-center bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500">
+    <div class="flex">
+        <div class="w-40 h-[196px] bg-yellow-500 rounded-tl-3xl rounded-bl-3xl relative">
+        <div class="w-36 h-36 bg-black rounded-full absolute left-9 transform top-7"></div>
+        </div>
+        <div class="block">
+            <div class="bg-yellow-500 text-white w-20 h-[39px] cursor-default items-center flex justify-center font-bold pl-8">C</div>
+            <div class="bg-yellow-500 text-white w-20 h-[39px] cursor-default items-center flex justify-center font-bold pl-8">Dm</div>
+            <div class="bg-yellow-500 text-white w-20 h-[39px] cursor-default items-center flex justify-center font-bold pl-8">F</div>
+            <div class="bg-yellow-500 text-white w-20 h-[39px] cursor-default items-center flex justify-center font-bold pl-8">G</div>
+            <div class="bg-yellow-500 text-white w-20 h-[39px] cursor-default items-center flex justify-center font-bold pl-8">Am</div>
+        </div>
+        <div class="block bg-slate-300 h-48 w-[570px] z-10">
+            <div class="bg-black w-[1000px] h-3 mb-[34px] cursor-pointer flex justify-center font-bold active:bg-gray-500 duration-200 active:-translate-y-1" onclick="play('C')"></div>
+            <div class="bg-black w-[1000px] h-3 mb-[34px] cursor-pointer flex justify-center font-bold active:bg-gray-500 duration-200 active:-translate-y-1" onclick="play('Dm')"></div>
+            <div class="bg-black w-[1000px] h-3 mb-[34px] cursor-pointer flex justify-center font-bold active:bg-gray-500 duration-200 active:-translate-y-1" onclick="play('F')"></div>
+            <div class="bg-black w-[1000px] h-3 mb-[34px] cursor-pointer flex justify-center font-bold active:bg-gray-500 duration-200 active:-translate-y-1" onclick="play('G')"></div>
+            <div class="bg-black w-[1000px] h-3 mb-[34px] cursor-pointer flex justify-center font-bold active:bg-gray-500 duration-200 active:-translate-y-1" onclick="play('Am')"></div>
+        </div>
+    </div>
+    
+    <div class="">
+        <div class="w-[500px] h-[400px] rounded-3xl bg-yellow-500 outline flex items-center justify-center relative">
+            <div class="w-[300px] absolute h-[300px] rounded-full bg-slate-300 outline"></div>
+
+            <div class="block z-50 ml-96">
+                <div class="bg-black w-10 h-10 rounded-full cursor-default mb-1"></div>
+                <div class="bg-black w-10 h-10 rounded-full cursor-default mb-1"></div>
+                <div class="bg-black w-10 h-10 rounded-full cursor-default mb-1"></div>
+                <div class="bg-black w-10 h-10 rounded-full cursor-default mb-1"></div>
+                <div class="bg-black w-10 h-10 rounded-full cursor-default mb-1"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function play(chord){
+            switch (chord) {
+                case "C":
+                    C.load(); C.play();  C.currentTime = 0.5; break;
+                case "Dm":
+                    Dm.load(); Dm.play(); Dm.currentTime = 0.5; break;
+                case "F":
+                    F.load(); F.play();  F.currentTime = 0.5; break;
+                case "G":
+                    G.load(); G.play();  G.currentTime = 0.5;  break;
+                case "Am":
+                    Am.load(); Am.play();  Am.currentTime = 0.5; break;
+            }
+        }
+
+        document.addEventListener("keypress", function(){
+            switch(event.key){
+                case "1": play("C")
+                    break;
+                case "2": play("Dm")
+                    break;
+                case "3": play("F")
+                    break;
+                case "4": play("G")
+                    break;
+                case "5": play("Am")
+            }
+        })
+    </script>
+</body>
+</html>

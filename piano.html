@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let audioDo = new Audio();
+        audioDo.src = "piano/Do.mp3"
+
+        let audioRe = new Audio();
+        audioRe.src = "piano/Re.mp3"
+
+        let audioMi = new Audio();
+        audioMi.src = "piano/Mi.mp3"
+
+        let audioFa = new Audio();
+        audioFa.src = "piano/Fa.mp3"
+
+        let audioSol = new Audio();
+        audioSol.src = "piano/Sol.mp3"
+
+        let audioLa = new Audio();
+        audioLa.src = "piano/La.mp3"
+
+        let audioSi = new Audio();
+        audioSi.src = "piano/Si.mp3"
+
+        let audioDo2 = new Audio();
+        audioDo2.src = "piano/Do2.mp3"
+
+        let A = new Audio();
+        A.src = "piano/Ab.mp3"
+
+        let B = new Audio();
+        B.src = "piano/Bb.mp3"
+
+        let D = new Audio();
+        D.src = "piano/Db.mp3"
+
+        let E = new Audio();
+        E.src = "piano/Eb.mp3"
+
+        let G = new Audio();
+        G.src = "piano/Gb.mp3"
+    </script>
+</head>
+<body class="flex h-screen justify-center items-center bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500">
+
+    <div class="flex relative">
+        <div class="bg-white w-20 h-60 outline cursor-pointer items-end flex justify-center font-bold active:scale-95" onclick="play('Do')">C</div>
+        <div class="bg-white w-20 h-60 outline cursor-pointer items-end flex justify-center font-bold active:scale-95" onclick="play('Re')">D</div>
+        <div class="bg-white w-20 h-60 outline cursor-pointer items-end flex justify-center font-bold active:scale-95" onclick="play('Mi')">E</div>
+        <div class="bg-white w-20 h-60 outline cursor-pointer items-end flex justify-center font-bold active:scale-95" onclick="play('Fa')">F</div>
+
+        <div class="bg-black text-white absolute w-12 h-40 rounded-sm cursor-pointer items-end flex justify-center font-bold active:scale-95 left-[455px] z-10" onclick="play('A#')">A#</div>
+        <div class="bg-white w-20 h-60 outline cursor-pointer items-end flex justify-center font-bold active:scale-95" onclick="play('Sol')">G</div>
+
+        <div class="bg-black text-white absolute w-12 h-40 rounded-sm cursor-pointer items-end flex justify-center font-bold active:scale-95 left-[375px] z-10" onclick="play('G#')">G#</div>
+        <div class="bg-white w-20 h-60 outline cursor-pointer items-end flex justify-center font-bold active:scale-95" onclick="play('La')">A</div>
+
+        <div class="bg-black text-white absolute w-12 h-40 rounded-sm cursor-pointer items-end flex justify-center font-bold active:scale-95 left-[295px]" onclick="play('F#')">F#</div>
+        <div class="bg-white w-20 h-60 outline cursor-pointer items-end flex justify-center font-bold active:scale-95" onclick="play('Si')">B</div>
+
+        <div class="bg-white w-20 h-60 outline cursor-pointer items-end flex justify-center font-bold active:scale-95" onclick="play('Do2')">C</div>
+        <div class="bg-black text-white absolute w-12 h-40 rounded-sm cursor-pointer items-end flex justify-center font-bold active:scale-95 left-[135px]" onclick="play('D#')">D#</div>
+
+        <div class="bg-black text-white absolute w-12 h-40 rounded-sm cursor-pointer items-end flex justify-center font-bold active:scale-95 left-14" onclick="play('C#')">C#</div>
+    </div> 
+
+    <script>
+        function play(chord){
+            switch (chord) {
+                case "Do":
+                    audioDo.load(); audioDo.play(); break; 
+                case "Re":
+                    audioRe.load(); audioRe.play(); break;
+                case "Mi":
+                    audioMi.load(); audioMi.play(); break;
+                case "Fa":
+                    audioFa.load(); audioFa.play(); break;
+                case "Sol":
+                    audioSol.load(); audioSol.play(); break;
+                case "La":
+                    audioLa.load(); audioLa.play(); break;
+                case "Si":
+                    audioSi.load(); audioSi.play(); break;
+                case "Do2":
+                    audioDo2.load(); audioDo2.play(); break;
+                case "C#":
+                    D.load(); D.play(); break;
+                case "D#":
+                    E.load(); E.play(); break;
+                case "F#":
+                    G.load(); G.play(); break;
+                case "G#":
+                    A.load(); A.play(); break;
+                case "A#":
+                    B.load(); B.play(); break;
+            }
+        }
+
+        document.addEventListener("keypress", function(){
+            switch(event.key){
+                case "1": play("Do")
+                    break;
+                case "2": play("Re")
+                    break;
+                case "3": play("Mi")
+                    break;
+                case "4": play("Fa")
+                    break;
+                case "5": play("Sol")
+                    break;
+                case "6": play("La")
+                    break;
+                case "7": play("Si")
+                    break;
+                case "8": play("Do2")
+                    break;
+                case "q": play("C#")
+                    break;
+                case "w": play("D#")
+                    break;
+                case "e": play("F#")
+                    break;
+                case "r": play("G#")
+                    break;
+                case "t": play("A#")
+                    break;
+            }
+        })
+    </script>
+
+</body>
+</html>
